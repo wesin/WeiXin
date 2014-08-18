@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "伤感"; 
+}
+<h1>@ViewBag.WesinTitle</h1>
+<div id="clock">
+    <h2 id="time"></h2>
+    <canvas id="canvas" width="300" height="300">
+        Canvas not supported!
+    </canvas>
+</div>
+<div id="mousepoint">
+    <canvas id="mousecanvas" width="500" height="250">Canvas not supported</canvas>
+</div>
+@section Scripts{
+   @Scripts.Render("~/WesinJs/Clock.js");
+   @Scripts.Render("~/WesinJs/mousepoint.js");
+}
