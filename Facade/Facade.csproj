@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="MessageStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeiXinMenuFacade.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonMethod\CommonMethod.csproj">

@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonModel\MenuModel.cs" />
+    <Compile Include="JsonModel\ResultModel.cs" />
+    <Compile Include="JsonModel\TokenModel.cs" />
     <Compile Include="WeixinMessageEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

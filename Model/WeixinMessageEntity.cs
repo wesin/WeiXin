@@ -6,69 +6,56 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public enum MsgType{
-        Text=0
+    /// <summary>
+    /// 消息类型
+    /// </summary>
+    public enum MsgType
+    {
+        Text = 0,
+        Event = 1
+
     }
+
     public class WeixinMessageEntity
     {
-        private string toUser;
         /// <summary>
         /// 消息对象
         /// </summary>
-        public string ToUser
-        {
-            get { return toUser; }
-            set { toUser = value; }
-        }
+        public string ToUser { get; set; }
 
-        private string fromUser;
         /// <summary>
         /// 来源用户
         /// </summary>
-        public string FromUser
-        {
-            get { return fromUser; }
-            set { fromUser = value; }
-        }
+        public string FromUser { get; set; }
 
-        private string content;
         /// <summary>
         /// 信息内容
         /// </summary>
-        public string Content
-        {
-            get { return content; }
-            set { content = value; }
-        }
+        public string Content { get; set; }
 
-        private string createTime;
         /// <summary>
         /// 创建时间
         /// </summary>
-        public string CreateTime
-        {
-            get { return createTime; }
-            set { createTime = value; }
-        }
+        public string CreateTime { get; set; }
 
-        private MsgType msgType;
         /// <summary>
         /// 消息类型
         /// </summary>
-        public MsgType MsgType
-        {
-            get { return msgType; }
-            set { msgType = value; }
-        }
+        public MsgType MsgType { get; set; }
 
-        private string messageID;
         /// <summary>
         /// 信息记录标识
         /// </summary>
-        public string MessageID
-        {
-            get { return messageID; }
-            set { messageID = value; }
-        }
+        public string MessageID { get; set; }
+
+        /// <summary>
+        /// 事件类型
+        /// </summary>
+        public string Event { get; set; }
+
+        /// <summary>
+        /// 按钮唯一码
+        /// </summary>
+        public string EventKey { get; set; }
     }
 }

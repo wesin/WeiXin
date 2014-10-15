@@ -1,6 +1,7 @@
 ﻿using CommonMethod;
 using Model;
 using Rule;
+using Rule.MessageConsole;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -19,21 +19,38 @@ namespace CommonMethod
         {
             var model = new WeixinMessageEntity();
             model.FromUser = xe.SelectSingleNode("FromUserName").InnerText;
-            model.Content = xe.SelectSingleNode("Content").InnerText;
             switch (xe.SelectSingleNode("MsgType").InnerText)
             {
                 case "text":
                     model.MsgType = MsgType.Text;
+                    model.Content = xe.SelectSingleNode("Content").InnerText;
+                    model.MessageID = xe.SelectSingleNode("MsgId").InnerText;
+                    break;
+                case "event":
+                    model.MsgType = MsgType.Event;
+                    model.Event = xe.SelectSingleNode("Event").InnerText;
+                    model.EventKey = xe.SelectSingleNode("EventKey").InnerText;
                     break;
                 default:
                     model.MsgType = MsgType.Text;
                     break;
             }
-            model.MessageID = xe.SelectSingleNode("MsgId").InnerText;
             return model;
         }
 
         public static WeixinMessageEntity CreateSendModel(WeixinMessageEntity sourceEntity)
+        {
+            var model = new WeixinMessageEntity
+            {
+                CreateTime = DateTime.Now.ToLongDateString(),
+                FromUser = sourceEntity.ToUser,
+                ToUser = sourceEntity.FromUser,
+                MessageID = sourceEntity.MessageID
+            };
+            return model;
+        }
+
+        public static WeixinMessageEntity CreateToSendModel(WeixinMessageEntity sourceEntity)
         {
             var model = new WeixinMessageEntity
             {

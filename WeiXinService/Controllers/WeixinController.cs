@@ -29,6 +29,16 @@ namespace WeiXinService.Controllers
             return View("Weixin");
         }
 
+        public ActionResult GetToken()
+        {
+            return Content(CommonMethod.WeixinCheck.GetToken());    
+        }
+
+        public ActionResult UpdateOwnMenu()
+        {
+            return Content(WeiXinMenuFacade.UpdateOwnMenu());
+        }
+
         ///// <summary>
         ///// 获取post返回来的数据
         ///// </summary>

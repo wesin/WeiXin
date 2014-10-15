@@ -1,0 +1,14 @@
+D:\快盘\git\Web\WeiXin\WeiXinService\Dac\bin\Debug\Dac.dll
+D:\快盘\git\Web\WeiXin\WeiXinService\Dac\bin\Debug\Dac.pdb
+D:\快盘\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.dll
+D:\快盘\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.pdb
+G:\快盘\git\Web\WeiXin\WeiXinService\Dac\bin\Debug\Dac.dll
+G:\快盘\git\Web\WeiXin\WeiXinService\Dac\bin\Debug\Dac.pdb
+G:\快盘\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.csprojResolveAssemblyReference.cache
+G:\快盘\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.dll
+G:\快盘\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.pdb
+G:\git\Web\WeiXin\WeiXinService\Dac\bin\Debug\Dac.dll
+G:\git\Web\WeiXin\WeiXinService\Dac\bin\Debug\Dac.pdb
+G:\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.dll
+G:\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.pdb
+G:\git\Web\WeiXin\WeiXinService\Dac\obj\Debug\Dac.csprojResolveAssemblyReference.cache
