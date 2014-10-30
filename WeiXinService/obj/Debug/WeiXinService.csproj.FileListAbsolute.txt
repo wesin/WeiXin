@@ -248,3 +248,5 @@ G:\git\Web\WeiXin\WeiXinService\WeiXinService\bin\zh-Hans\Microsoft.Owin.Securit
 G:\git\Web\WeiXin\WeiXinService\WeiXinService\obj\Debug\WeiXinService.csprojResolveAssemblyReference.cache
 G:\git\Web\WeiXin\WeiXinService\WeiXinService\obj\Debug\WeiXinService.dll
 G:\git\Web\WeiXin\WeiXinService\WeiXinService\obj\Debug\WeiXinService.pdb
+G:\git\Web\WeiXin\WeiXinService\WeiXinService\bin\Dac.dll
+G:\git\Web\WeiXin\WeiXinService\WeiXinService\bin\Dac.pdb

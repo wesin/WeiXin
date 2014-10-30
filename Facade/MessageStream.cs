@@ -15,22 +15,11 @@ namespace Facade
 {
     public class MessageStream
     {
-        int maxBytesCount = 4096;
-        StreamWriter fs;
-        int fileLenth;
-        int nowFileLenth = 0;
-        public bool ReadStream()
+        public string ReadStreamAndReply(HttpRequestBase request)
         {
-            //fs = new StreamWriter("d://2.txt", true, Encoding.UTF8);
-            Stream stream = HttpContext.Current.Request.InputStream;
-            byte[] bt = new byte[2000000];
-            nowFileLenth = stream.Read(bt, nowFileLenth, maxBytesCount);
-            while ((fileLenth = stream.Read(bt, nowFileLenth, maxBytesCount)) > 0)
-            {
-                nowFileLenth += fileLenth;
-            }
-            string txt = System.Text.Encoding.UTF8.GetString(bt, 0, nowFileLenth);
-            //File.AppendAllText("d://MessageFrom.txt", txt, Encoding.UTF8);
+            string txt = new WeiXinCommon().PostInput(request, Encoding.UTF8);
+            FileMessageSave.MessageSave(txt);
+
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(txt);
             XmlElement xe = xml.DocumentElement;
@@ -38,10 +27,12 @@ namespace Facade
 
             MessageFactory factory = new MessageFactory(entity);
             var message = factory.ConsoleMessage();
-            HttpContext.Current.Response.Write(message);
-            return true;
+            FileMessageSave.MessageSave(message);
+            return message;
 
         }
+
+
 
         
     }

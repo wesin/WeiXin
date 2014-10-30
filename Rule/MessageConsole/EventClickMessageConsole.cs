@@ -24,9 +24,21 @@ namespace Rule.MessageConsole
 
         private string PostMessageNIMEI()
         {
-            string json = "{\"touser\":\""+ entity.FromUser +"\",\"msgtype\":\"text\",\"text\":{\"content\":\"感谢您的支持\"}}";
-            string url = string.Format(WeiXinCommon.MessageSend, WeiXinCommon.Access_token);
-            string result = WeixinMessagePost.PostMessage(url, json);
+            ContentModel content = new ContentModel()
+            {
+                content = "感谢您的支持!"
+            };
+            TextMessageModel textModel = new TextMessageModel()
+            {
+                text = content,
+                touser = entity.FromUser,
+                msgtype = MsgType.text.ToString()
+            };
+            string json = JsonHelper.JsonSerializer(textModel);
+            FileMessageSave.MessageSave(json);
+
+            WeixinMessagePost msgPost = new WeixinMessagePost(WeiXinCommon.MessageSend);
+            string result = msgPost.PostMessage(json);
             ResultModel model = JsonHelper.JsonDeserialize<ResultModel>(result);
             if (model.errcode == "0")
             {

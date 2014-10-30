@@ -21,5 +21,37 @@ namespace CommonMethod
        public const string MenuCreate = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token={0}";
 
        public const string MessageSend = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token={0}";
+
+
+           
+         
+       /// <summary>
+       /// 获取POST返回来的数据
+       /// </summary>
+       /// <param name="request">请求对象</param>
+       /// <param name="encoding">编码格式</param>
+       /// <returns></returns>
+       public string PostInput(System.Web.HttpRequestBase request, Encoding encoding)
+       {
+           StringBuilder builder = new StringBuilder();
+           try
+           {
+               using (System.IO.Stream s = request.InputStream)
+               {
+                   int count = 0;
+                   byte[] buffer = new byte[1024];
+                   while ((count = s.Read(buffer, 0, 1024)) > 0)
+                   {
+                       builder.Append(encoding.GetString(buffer, 0, count));
+                   }
+                   s.Flush();
+                   s.Close();
+                   s.Dispose();
+               }
+               return builder.ToString();
+           }
+           catch (Exception ex)
+           { throw ex; }
+       }
     }
 }

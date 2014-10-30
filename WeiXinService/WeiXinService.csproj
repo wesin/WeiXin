@@ -241,9 +241,21 @@
       <Project>{6f22e515-20be-4438-b710-400549dcf3c8}</Project>
       <Name>CommonMethod</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dac\Dac.csproj">
+      <Project>{f63e4dec-7862-49df-b42d-dab63783465c}</Project>
+      <Name>Dac</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Facade\Facade.csproj">
       <Project>{b3655e51-2c93-4c05-9d47-b95dbb190715}</Project>
       <Name>Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{00aaf1e9-6ff7-41f6-ac0f-5d2f458fdc42}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rule\Rule.csproj">
+      <Project>{94101430-06e5-46d6-95c7-1a255ef98a85}</Project>
+      <Name>Rule</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

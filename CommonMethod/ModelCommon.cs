@@ -22,9 +22,11 @@ namespace CommonMethod
             switch (xe.SelectSingleNode("MsgType").InnerText)
             {
                 case "text":
-                    model.MsgType = MsgType.Text;
+                    model.MsgType = MsgType.text;
                     model.Content = xe.SelectSingleNode("Content").InnerText;
                     model.MessageID = xe.SelectSingleNode("MsgId").InnerText;
+                    model.ToUser = xe.SelectSingleNode("ToUserName").InnerText;
+                    model.CreateTime = xe.SelectSingleNode("CreateTime").InnerText;
                     break;
                 case "event":
                     model.MsgType = MsgType.Event;
@@ -32,7 +34,7 @@ namespace CommonMethod
                     model.EventKey = xe.SelectSingleNode("EventKey").InnerText;
                     break;
                 default:
-                    model.MsgType = MsgType.Text;
+                    model.MsgType = MsgType.text;
                     break;
             }
             return model;
@@ -42,7 +44,7 @@ namespace CommonMethod
         {
             var model = new WeixinMessageEntity
             {
-                CreateTime = DateTime.Now.ToLongDateString(),
+                CreateTime = CommonMethod.DateTimeToUnixInt(DateTime.Now).ToString(),
                 FromUser = sourceEntity.ToUser,
                 ToUser = sourceEntity.FromUser,
                 MessageID = sourceEntity.MessageID
@@ -54,12 +56,27 @@ namespace CommonMethod
         {
             var model = new WeixinMessageEntity
             {
-                CreateTime = DateTime.Now.ToLongDateString(),
+                CreateTime = CommonMethod.DateTimeToUnixInt(DateTime.Now).ToString(),
                 FromUser = sourceEntity.ToUser,
                 ToUser = sourceEntity.FromUser,
                 MessageID = sourceEntity.MessageID
             };
             return model;
+        }
+
+
+        public static string Send_Msg<T>(T t, ref string msg)
+        {
+            if (t == null)
+                return "";
+            StringBuilder strB = new StringBuilder();
+            strB.Append("<xml>");
+            foreach (System.Reflection.PropertyInfo p in t.GetType().GetProperties())
+            {
+                strB.Append(string.Format("<{0}>{1}</{0}>", p.Name, p.GetValue(t, null).ToString()));
+            }
+            strB.Append("</xml>");
+            return strB.ToString();
         }
     }
 }

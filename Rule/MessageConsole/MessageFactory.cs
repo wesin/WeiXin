@@ -20,7 +20,7 @@ namespace Rule.MessageConsole
             IConsoleMessage icm;
             switch (entity.MsgType)
             { 
-                case MsgType.Text:
+                case MsgType.text:
                     icm = new TextMessageConsole(entity);
                     break;
                 case MsgType.Event:

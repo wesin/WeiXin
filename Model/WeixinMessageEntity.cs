@@ -11,8 +11,14 @@ namespace Model
     /// </summary>
     public enum MsgType
     {
-        Text = 0,
-        Event = 1
+        text = 0,
+        Event = 1,
+        image = 2,
+        voice = 3,
+        location = 4,
+        link = 5,
+        events = 6,
+        video = 7
 
     }
 

@@ -11,7 +11,7 @@ namespace CommonMethod
     {
         public static bool MessageSave(string str)
         {
-            File.AppendAllText("c:\\weixin.txt", str);
+            File.AppendAllText("d:\\weixin.txt", "\r\n" + str);
             return true;
         }
     }

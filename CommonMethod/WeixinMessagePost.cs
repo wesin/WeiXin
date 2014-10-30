@@ -11,8 +11,16 @@ namespace CommonMethod
 {
     public class WeixinMessagePost
     {
-        private static readonly string textTemplateStr = @"<xml><ToUserName>
-<![CDATA[{0}]]></ToUserName><FromUserName>
+        private string msgUrl = string.Empty;
+        public WeixinMessagePost(string msgUrl)
+        {
+            if (string.IsNullOrEmpty(WeiXinCommon.Access_token))
+            {
+                WeixinCheck.GetToken();
+            }
+            this.msgUrl = string.Format(msgUrl,WeiXinCommon.Access_token);
+        }
+        private static readonly string textTemplateStr = @"<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName>
 <![CDATA[{1}]]></FromUserName>
 <CreateTime>{2}</CreateTime>
 <MsgType><![CDATA[{3}]]></MsgType>
@@ -25,9 +33,9 @@ namespace CommonMethod
             return string.Format(textTemplateStr, entity.ToUser, entity.FromUser, entity.CreateTime, entity.MsgType.ToString(), entity.Content);
         }
 
-        public static string PostMessage(string url, string message)
+        public string PostMessage(string message)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(msgUrl);
             request.Method = "POST";
             byte[] data = Encoding.UTF8.GetBytes(message);
             request.ContentLength = data.Length;

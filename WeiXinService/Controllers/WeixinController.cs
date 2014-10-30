@@ -23,11 +23,48 @@ namespace WeiXinService.Controllers
             if (Request.HttpMethod.ToLower() == "post")
             {
                 MessageStream stream = new MessageStream();
-                stream.ReadStream();
+                stream.ReadStreamAndReply(HttpContext.Request);
             }
             @ViewBag.WesinTitle = "Wesin";
             return View("Weixin");
         }
+
+        //private Models.Send_Msg GetSendMsg(string msgType)
+        //{
+        //    //回复内容
+        //    Weixin.Models.Send_Text model = new Weixin.Models.Send_Text();
+        //    switch (msgType)
+        //    {
+        //        case Core.MsgType.text:
+        //            model.Content = "reply text";
+        //            break;
+        //        case Core.MsgType.image:
+        //            model.Content = "reply image";
+        //            break;
+        //        case Core.MsgType.events:
+        //            model.Content = "reply 事件";
+        //            break;
+        //    }
+        //    model.CreateTime = Weixin.Core.DateTimeHelper.DateTimeToUnixInt(DateTime.Now).ToString();
+        //    model.MsgType = "text";
+        //    return model;
+        //}
+
+        //private void ReceiveHandler(Models.Receive_Msg receiveModel, ref string msg)
+        //{
+        //    try
+        //    {
+        //        using (System.IO.FileStream fs = new System.IO.FileStream(Server.MapPath("Files//" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt"), System.IO.FileMode.OpenOrCreate))
+        //        {
+        //            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(fs))
+        //            {
+        //                sw.Write(receiveModel.Xml);
+        //            }
+        //        }
+        //    }
+        //    catch
+        //    { }
+        //}
 
         public ActionResult GetToken()
         {
