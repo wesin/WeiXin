@@ -1,5 +1,6 @@
 ﻿using CommonMethod;
 using Model.JsonModel;
+using Rule;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,9 +13,9 @@ namespace Facade
 {
     public class WeiXinMenuFacade
     {
-        public static string UpdateOwnMenu()
+        public string UpdateOwnMenu()
         {
-            string json = "{\"button\":[{\"type\":\"click\",\"name\":\"会费\",\"key\":\"BtnMember\"}]}";
+            string json = JsonHelper.JsonSerializer(new WeiXinMenuRule().CreateMenu());
             string url = string.Format(WeiXinCommon.MenuCreate, WeiXinCommon.Access_token);
             WeixinMessagePost msgPost = new WeixinMessagePost(WeiXinCommon.MenuCreate);
             string result = msgPost.PostMessage(json);

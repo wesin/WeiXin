@@ -22,7 +22,12 @@ namespace CommonMethod
 
        public const string MessageSend = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token={0}";
 
+       public const string UserInfoGet = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang=zh_CN";
 
+        /// <summary>
+       /// 第一个拉取的OPENID，不填默认从头开始拉取
+        /// </summary>
+       public const string UserGet = "https://api.weixin.qq.com/cgi-bin/user/get?access_token={0}&next_openid={1}";
            
          
        /// <summary>

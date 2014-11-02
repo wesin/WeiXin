@@ -13,7 +13,9 @@ namespace CommonMethod
 
         public static string JsonSerializer(object t)
         { 
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(t.GetType());
+            DataContractJsonSerializerSettings setting = new DataContractJsonSerializerSettings();
+            setting.IgnoreExtensionDataObject = false;
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(t.GetType(),setting);
             MemoryStream ms = new MemoryStream();
             ser.WriteObject(ms, t);
             string jsonString = Encoding.UTF8.GetString(ms.ToArray());

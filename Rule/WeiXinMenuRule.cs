@@ -12,13 +12,34 @@ namespace Rule
     }
     public class WeiXinMenuRule
     {
-        public MenuModel.button CreateMenu()
+        public MenuModel CreateMenu()
         {
-            MenuModel.button btn = new MenuModel.button();
-            btn.type = "click";
-            btn.name = "会费";
-            btn.key = ButtonList.BtnMember.ToString();
-            return btn;
+            Sub_button sb = new Sub_button()
+            {
+                key = MenuButtonKey.sub_button1.ToString(),
+                name = "子菜单1",
+                type = MenuButtonType.pic_sysphoto.ToString()
+            };
+            Button button = new Button()
+            {
+                name = "菜单",
+                sub_button = sb
+            };
+            Button button2 = new Button()
+            {
+                name = "消息",
+                key = MenuButtonKey.buttonMessage.ToString(),
+                type = MenuButtonType.location_select.ToString()
+            };
+            Button button3 = new Button()
+            {
+                name = "会费",
+                key = MenuButtonKey.buttonMemberFee.ToString(),
+                type = MenuButtonType.click.ToString()
+            };
+            MenuModel menuModel = new MenuModel();
+            menuModel.button = new Button[] { button, button2, button3 };
+            return menuModel;
         }
     }
 }

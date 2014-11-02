@@ -1,0 +1,15 @@
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\UnitTestProject.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\UnitTestProject.pdb
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\CommonMethod.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Facade.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Model.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Rule.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\MongoDB.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\CommonMethod.pdb
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Facade.pdb
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Model.pdb
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Rule.pdb
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\MongoDB.xml
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\obj\Debug\UnitTestProject.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\obj\Debug\UnitTestProject.pdb
