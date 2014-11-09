@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace CommonMethod
 {
@@ -13,14 +14,9 @@ namespace CommonMethod
 
         public static string JsonSerializer(object t)
         { 
-            DataContractJsonSerializerSettings setting = new DataContractJsonSerializerSettings();
-            setting.IgnoreExtensionDataObject = false;
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(t.GetType(),setting);
-            MemoryStream ms = new MemoryStream();
-            ser.WriteObject(ms, t);
-            string jsonString = Encoding.UTF8.GetString(ms.ToArray());
-            ms.Close();
-            return jsonString;
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.NullValueHandling = NullValueHandling.Ignore;
+            return JsonConvert.SerializeObject(t,setting);
         }
 
         /// <summary>
@@ -28,9 +24,7 @@ namespace CommonMethod
         /// </summary>
         public static T JsonDeserialize<T>(string jsonString)
         {
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
-            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
-            T obj = (T)ser.ReadObject(ms);
+            T obj = JsonConvert.DeserializeObject<T>(jsonString);
             return obj;
         }
     }

@@ -98,7 +98,7 @@ namespace Model.JsonModel
         [DataMember(Order = 3)]
         public string url { get; set; }
         [DataMember(Order = 4)]
-        public Sub_button sub_button { get; set; }
+        public Sub_button[] sub_button { get; set; }
     }
 
 }

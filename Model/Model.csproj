@@ -45,6 +45,7 @@
     <Compile Include="JsonModel\ResultModel.cs" />
     <Compile Include="JsonModel\TextMessageModel.cs" />
     <Compile Include="JsonModel\TokenModel.cs" />
+    <Compile Include="JsonModel\UserListModel.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="WeixinMessageEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -71,11 +71,10 @@ namespace UnitTestProject
         public void UpdateOwnMenuTest()
         {
             WeiXinMenuFacade target = new WeiXinMenuFacade(); // TODO: 初始化为适当的值
-            string expected = string.Empty; // TODO: 初始化为适当的值
+            string expected = "success"; // TODO: 初始化为适当的值
             string actual;
             actual = target.UpdateOwnMenu();
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("验证此测试方法的正确性。");
         }
     }
 }

@@ -15,7 +15,8 @@ namespace Facade
     {
         public string UpdateOwnMenu()
         {
-            string json = JsonHelper.JsonSerializer(new WeiXinMenuRule().CreateMenu());
+            string json =  JsonHelper.JsonSerializer(new WeiXinMenuRule().CreateMenu());
+            FileMessageSave.MessageSave(json);
             string url = string.Format(WeiXinCommon.MenuCreate, WeiXinCommon.Access_token);
             WeixinMessagePost msgPost = new WeixinMessagePost(WeiXinCommon.MenuCreate);
             string result = msgPost.PostMessage(json);

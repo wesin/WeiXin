@@ -7,7 +7,8 @@ using Model.JsonModel;
 
 namespace Rule
 {
-    public enum ButtonList { 
+    public enum ButtonList
+    {
         BtnMember = 0
     }
     public class WeiXinMenuRule
@@ -23,7 +24,7 @@ namespace Rule
             Button button = new Button()
             {
                 name = "菜单",
-                sub_button = sb
+                sub_button = new Sub_button[] { sb }
             };
             Button button2 = new Button()
             {
