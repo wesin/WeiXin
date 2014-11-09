@@ -12,29 +12,30 @@ namespace CommonMethod
     public class WeixinMessagePost
     {
         private string msgUrl = string.Empty;
-        public WeixinMessagePost(string msgUrl)
+
+        /// <summary>
+        /// 设置对应的url地址
+        /// </summary>
+        public string MsgUrl
+        {
+            get { return msgUrl; }
+            set { msgUrl = value; }
+        }
+
+        public WeixinMessagePost()
         {
             if (string.IsNullOrEmpty(WeiXinCommon.Access_token))
             {
                 WeixinCheck.GetToken();
             }
-            this.msgUrl = string.Format(msgUrl,WeiXinCommon.Access_token);
-        }
-        private static readonly string textTemplateStr = @"<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName>
-<![CDATA[{1}]]></FromUserName>
-<CreateTime>{2}</CreateTime>
-<MsgType><![CDATA[{3}]]></MsgType>
-<Content><![CDATA[{4}]]></Content>
-</xml>";
-
-
-        public static string GetPostMessage(WeixinMessageEntity entity)
-        {
-            return string.Format(textTemplateStr, entity.ToUser, entity.FromUser, entity.CreateTime, entity.MsgType.ToString(), entity.Content);
         }
 
         public string PostMessage(string message)
         {
+            if (string.IsNullOrEmpty(msgUrl))
+            {
+                return "Unknow Url Address!";
+            }
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(msgUrl);
             request.Method = "POST";
             byte[] data = Encoding.UTF8.GetBytes(message);

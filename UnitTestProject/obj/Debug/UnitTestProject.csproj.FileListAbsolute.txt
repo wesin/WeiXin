@@ -13,3 +13,5 @@ G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\MongoDB.xml
 G:\git\Web\WeiXin\WeiXinService\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
 G:\git\Web\WeiXin\WeiXinService\UnitTestProject\obj\Debug\UnitTestProject.dll
 G:\git\Web\WeiXin\WeiXinService\UnitTestProject\obj\Debug\UnitTestProject.pdb
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Newtonsoft.Json.dll
+G:\git\Web\WeiXin\WeiXinService\UnitTestProject\bin\Debug\Newtonsoft.Json.xml

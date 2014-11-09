@@ -25,3 +25,5 @@ G:\git\Web\WeiXin\WeiXinService\CommonMethod\bin\Debug\MongoDB.xml
 G:\git\Web\WeiXin\WeiXinService\CommonMethod\obj\Debug\CommonMethod.csprojResolveAssemblyReference.cache
 G:\git\Web\WeiXin\WeiXinService\CommonMethod\obj\Debug\CommonMethod.dll
 G:\git\Web\WeiXin\WeiXinService\CommonMethod\obj\Debug\CommonMethod.pdb
+G:\git\Web\WeiXin\WeiXinService\CommonMethod\bin\Debug\Newtonsoft.Json.dll
+G:\git\Web\WeiXin\WeiXinService\CommonMethod\bin\Debug\Newtonsoft.Json.xml

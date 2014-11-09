@@ -39,7 +39,7 @@ namespace WeiXinService.Controllers
             return Content(new WeiXinMenuFacade().UpdateOwnMenu());
         }
 
-        public ActionResult UserList()
+        public ActionResult GetUserList()
         {
             return View("UserList");
         }

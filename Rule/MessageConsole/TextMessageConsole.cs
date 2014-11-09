@@ -52,7 +52,8 @@ namespace Rule.MessageConsole
             string message = JsonHelper.JsonSerializer(textModel);
             FileMessageSave.MessageSave(message);
 
-            WeixinMessagePost msgPost = new WeixinMessagePost(WeiXinCommon.MessageSend);
+            WeixinMessagePost msgPost = new WeixinMessagePost();
+            msgPost.MsgUrl = string.Format(WeiXinCommon.MessageSend, WeiXinCommon.Access_token);
             string result = msgPost.PostMessage(message);
 
             ResultModel model = JsonHelper.JsonDeserialize<ResultModel>(result);

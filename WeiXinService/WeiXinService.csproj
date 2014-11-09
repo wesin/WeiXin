@@ -225,6 +225,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Weixin\Weixin.cshtml" />
     <Content Include="Views\HtmlFive\HtmlFive.cshtml" />
+    <Content Include="Views\Weixin\UserList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

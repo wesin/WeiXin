@@ -11,4 +11,3 @@ G:\git\Web\WeiXin\WeiXinService\Model\bin\Debug\Model.dll
 G:\git\Web\WeiXin\WeiXinService\Model\bin\Debug\Model.pdb
 G:\git\Web\WeiXin\WeiXinService\Model\obj\Debug\Model.dll
 G:\git\Web\WeiXin\WeiXinService\Model\obj\Debug\Model.pdb
-G:\git\Web\WeiXin\WeiXinService\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

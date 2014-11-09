@@ -31,3 +31,5 @@ G:\git\Web\WeiXin\WeiXinService\Rule\bin\Debug\Model.pdb
 G:\git\Web\WeiXin\WeiXinService\Rule\bin\Debug\MongoDB.xml
 G:\git\Web\WeiXin\WeiXinService\Rule\obj\Debug\Rule.dll
 G:\git\Web\WeiXin\WeiXinService\Rule\obj\Debug\Rule.pdb
+G:\git\Web\WeiXin\WeiXinService\Rule\bin\Debug\Newtonsoft.Json.dll
+G:\git\Web\WeiXin\WeiXinService\Rule\bin\Debug\Newtonsoft.Json.xml
